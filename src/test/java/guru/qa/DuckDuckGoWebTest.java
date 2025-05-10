@@ -1,17 +1,10 @@
 package guru.qa;
 
-import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.selector.ByText;
+import guru.qa.data.Language;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
-import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
-import org.junit.jupiter.params.provider.ValueSources;
+import org.junit.jupiter.params.provider.*;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.CollectionCondition.texts;
@@ -19,7 +12,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class Webtest {
+public class DuckDuckGoWebTest {
 
     @BeforeEach // это предусловие в тест-кейсе
     void setUp() {
@@ -43,11 +36,13 @@ public class Webtest {
 
 
 //    @CsvSource(value = {
-//            "selenide, https://selenide.org",
+//            "Selenide, https://selenide.org, 40.23, false", // если у нас больше 2 значений, можно таким образом передать параметры
 //            "JUnit 5, https://junit.org"
 //    })
+
+
     @CsvFileSource(resources = "/test_data/searchResultShouldContainExpectedLinkTest")
-    @ParameterizedTest(name = "Для поискового запроса {0} в первой карточке должна быть ссылка {1}")
+    @ParameterizedTest(name = "Для поискового запроса {0} в первой карточке должна быть ссылка {1}") // {0} - это из ресурсов берется значение с индектом 0 (selenide), индекс {1} - это https://selenide.org
     @Tag("BLOCKER")
     void searchResultShouldContainExpectedLinkTest(String searchQuery, String expectedLink) {
 
@@ -65,5 +60,6 @@ public class Webtest {
 //        $("#header").find(byText("Images")).click();
 //        $$(".oc9XKvSI3VFua2OmmSXU").shouldBe(sizeGreaterThan(0));
 //    }
+
 }
 
