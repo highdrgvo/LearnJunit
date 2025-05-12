@@ -22,7 +22,6 @@ public class ShopKixBoxPageNewArrivalsTest {
     @ValueSource(strings = {
             "Новинки"
     })
-    // Параметризованный тест - это такой тест, в котором тест-кейсы идентичны, но входные тестовые данные отличаются
     @ParameterizedTest(name = "На странице отображается заголовок {0}")
     @Tag("MAJOR")
     void headerNewArrivalsPageTest(String expectedTitle) {
