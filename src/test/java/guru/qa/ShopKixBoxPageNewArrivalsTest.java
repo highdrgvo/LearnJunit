@@ -36,15 +36,13 @@ public class ShopKixBoxPageNewArrivalsTest {
 @Tag("MAJOR")
 void CheckOpeningPageDependingCategoryAndGenderTest(String gender, String category, String url) {
 
-    actions().moveToElement($("nav.header-part-menu").find(byText(gender)))
+    actions()
+            .moveToElement($("nav.header-part-menu").find(byText(gender)))
             .pause(400)
             .perform();
     actions().moveToElement($("nav.header-part-menu").find(byText(category))).click().perform();
     webdriver().shouldHave(url(url));
     actions().pause(500).perform();
-
-
     }
-
 }
 
