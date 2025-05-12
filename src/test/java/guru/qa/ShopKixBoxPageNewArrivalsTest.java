@@ -37,7 +37,7 @@ public class ShopKixBoxPageNewArrivalsTest {
     }
 
 
-    @CsvFileSource(resources = "/test_data/checkOpenNeededSection")
+    @CsvFileSource(resources = "/test_data/checkOpenNeededUrl")
     @ParameterizedTest(name = "При открытии раздела {0} с категорией {1} отображается ссылка {2}")
     @Tag("MAJOR")
     @DisplayName("Отображается корректный url в зависимости от раздела и категории")
