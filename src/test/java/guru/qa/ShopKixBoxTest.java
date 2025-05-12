@@ -17,7 +17,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.url;
 
 @DisplayName("Тестирование интернет-магазина KixBox")
-public class ShopKixBoxPageNewArrivalsTest {
+public class ShopKixBoxTest {
 
     @BeforeAll
     static void actionsBeforeTestingShopKixBox() {
